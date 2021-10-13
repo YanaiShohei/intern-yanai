@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-title',
   templateUrl: './title.component.html',
@@ -13,13 +15,16 @@ export class TitleComponent implements OnInit {
   rule3 = '答えがわからない場合、ヒントを見れます。';
   rule4 = '全問回答後に結果が表示されます。';
 
-  constructor() { }
+  constructor(private router: Router,) { 
+
+  }
+
 
   ngOnInit(): void {
   }
 
-  click(){
-
+  questionStart(): void {
+    this.router.navigate(['../question'])
   }
 }
 
