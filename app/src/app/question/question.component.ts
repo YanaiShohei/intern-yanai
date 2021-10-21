@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UrlHandlingStrategy } from '@angular/router';
 
 @Component({
   selector: 'app-question',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuestionComponent implements OnInit {
 
+  isDisplayHint: boolean = false;
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
+
+  }
+  clickHint():void{
+    this.isDisplayHint = !this.isDisplayHint;
   }
 
 }

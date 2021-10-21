@@ -10,3 +10,12 @@
 <br>
 <button class="button">選択肢</button>
 <br>
+<button (click)="clickHint()" >ヒント</button>
+<div *ngIf="isDisplayHint">
+    <li>
+       アテネオリンピック公式テーマソング 
+    </li>
+</div>
+
+
+
