@@ -6,6 +6,7 @@ import { TitleComponent } from './title/title.component';
 import { QuestionComponent } from './question/question.component';
 import { ResultComponent } from './result/result.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,7 +16,7 @@ import { ResultComponent } from './result/result.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
