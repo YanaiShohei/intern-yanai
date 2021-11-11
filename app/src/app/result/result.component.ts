@@ -1,5 +1,6 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-result',
@@ -8,6 +9,10 @@ import { Chart, registerables } from 'chart.js';
 })
 
 export class ResultComponent implements OnInit {
+
+  backTitle(){
+    this.router.navigate(['../title'])
+  }
 
   @ViewChild('canvas')
   ref?: ElementRef;
@@ -18,7 +23,7 @@ export class ResultComponent implements OnInit {
   context?: CanvasRenderingContext2D;
   chart?: Chart;
 
-  constructor(private _elementRef:ElementRef){
+  constructor(private _elementRef:ElementRef,private router: Router,){
     Chart.register(...registerables);
   }
 
