@@ -1,19 +1,27 @@
-<h1>1問目</h1>
+<h1>{{quizCount}}問目</h1>
 
-<h3>いくつもの日々をこえて辿り着いた今がある</h3>
+<h3>{{quiz?.question}}問題文</h3>
 
-<button class="button">選択肢</button>
+<button mat-raised-button color="accent" class="button">
+  選択肢
+</button>
 <br>
-<button class="button">選択肢</button>
+<button mat-raised-button color="accent" class="button">
+  選択肢
+</button>
 <br>
-<button class="button">選択肢</button>
+<button mat-raised-button color="accent" class="button">
+  選択肢
+</button>
 <br>
-<button class="button">選択肢</button>
+<button mat-raised-button color="accent" class="button">
+  選択肢
+</button>
 <br>
-<button (click)="clickHint()" >ヒント</button>
+<button mat-raised-button color="accent" (click)="clickHint()" >ヒント</button>
 <div *ngIf="isDisplayHint">
     <li>
-       アテネオリンピック公式テーマソング 
+      アテネオリンピック公式テーマソング
     </li>
 </div>
 
