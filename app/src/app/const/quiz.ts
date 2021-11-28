@@ -13,7 +13,7 @@ export interface Quiz {
   //choicesというChoice型の配列 statementを格納
   choices: Choice[]
   //explanationというstring型の変数 ヒントを格納?
-  explanation: string;
+  hint: string;
 };
 
 export const QUIZ_DATA: Quiz[] = [
@@ -37,7 +37,7 @@ export const QUIZ_DATA: Quiz[] = [
         isAnswer: false
       },
     ],
-    explanation: 'ゆずの楽曲。アテネオリンピック公式テーマソング'
+    hint: 'ゆずの楽曲。アテネオリンピック公式テーマソング'
   },
   {
     question: '２人よりそって歩いて永久の愛を形にしていつまでも君の横で笑っていたくて',
@@ -59,7 +59,7 @@ export const QUIZ_DATA: Quiz[] = [
         isAnswer: false
       },
     ],
-    explanation: 'GReeeeNの楽曲。高校野球を題材にしたTBS系ドラマ「ROOKIES」の主題歌'
+    hint: 'GReeeeNの楽曲。高校野球を題材にしたTBS系ドラマ「ROOKIES」の主題歌'
   },
   {
     question: '見えないものを見ようとして、望遠鏡を覗き込んだ静寂を切り裂いていくつもの声が生まれたよ',
@@ -81,7 +81,7 @@ export const QUIZ_DATA: Quiz[] = [
         isAnswer: false
       },
     ],
-    explanation: 'BUMP OF CHICKENの楽曲。関西テレビ・フジテレビ系ドラマ「天体観測」挿入歌。'
+    hint: 'BUMP OF CHICKENの楽曲。関西テレビ・フジテレビ系ドラマ「天体観測」挿入歌。'
   },
   {
     question: '広い宇宙の数あるひとつ青い地球の広い世界で小さな恋の思いは届く',
@@ -103,7 +103,7 @@ export const QUIZ_DATA: Quiz[] = [
         isAnswer: false
       },
     ],
-    explanation: 'MONGOL800の代表曲。これまでにシングル化されたことはないが、さまざまなアーティストにカバーされている。'
+    hint: 'MONGOL800の代表曲。これまでにシングル化されたことはないが、さまざまなアーティストにカバーされている。'
   },
   {
     question: '描いた夢とここにある今２つの景色見比べても',
@@ -125,6 +125,6 @@ export const QUIZ_DATA: Quiz[] = [
         isAnswer: false
       },
     ],
-    explanation: 'ロードオブメジャーの楽曲。NHK教育アニメ「メジャー〜１stシーズン〜」のオープニングテーマ'
+    hint: 'ロードオブメジャーの楽曲。NHK教育アニメ「メジャー〜１stシーズン〜」のオープニングテーマ'
   },
 ];

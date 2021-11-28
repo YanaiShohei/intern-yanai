@@ -17,11 +17,13 @@ export class QuestionComponent implements OnInit {
   quiz?: Quiz;
   quizList?: any;
   quizCount?: number;
-
 //  サービスを使えるようにする
   constructor(private quizservice:QuizService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.quizCount = this.quizservice.quizCount;
+    this.quiz = this.quizservice.getQuiz();
+  }
 
   // 問題のヒントが表示する。
   clickHint():void{

@@ -1,27 +1,17 @@
 <h1>{{quizCount}}問目</h1>
 
-<h3>{{quiz?.question}}問題文</h3>
+<h3>{{quiz?.question}}</h3>
 
+<div *ngFor="let choice of quiz?.choices">
 <button mat-raised-button color="accent" class="button">
-  選択肢
+  {{choice.statement}}
 </button>
-<br>
-<button mat-raised-button color="accent" class="button">
-  選択肢
-</button>
-<br>
-<button mat-raised-button color="accent" class="button">
-  選択肢
-</button>
-<br>
-<button mat-raised-button color="accent" class="button">
-  選択肢
-</button>
+</div>
 <br>
 <button mat-raised-button color="accent" (click)="clickHint()" >ヒント</button>
 <div *ngIf="isDisplayHint">
     <li>
-      アテネオリンピック公式テーマソング
+      {{quiz?.hint}}
     </li>
 </div>
 
