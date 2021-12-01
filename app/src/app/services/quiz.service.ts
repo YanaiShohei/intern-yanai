@@ -30,6 +30,9 @@ export class QuizService {
   nextQuiz(){
     return this.quizList[++this.quizCount];
   }
+  nextQuizCount(){
+    return this.quizCount;
+  }
 }
 
 
