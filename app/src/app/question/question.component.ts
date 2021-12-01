@@ -30,6 +30,7 @@ export class QuestionComponent implements OnInit {
   //
   choiceAnswer(choice: Choice){
     this.quiz = this.quizservice.nextQuiz();
+    this.quizCount = this.quizservice.nextQuizCount();
   }
 
 }
