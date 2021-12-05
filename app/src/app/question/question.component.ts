@@ -12,25 +12,30 @@ export class QuestionComponent implements OnInit {
 
   quiz?: Quiz;
   quizList?: any;
-  quizCount?: number;
+  quizCount: number = 0;
 
   isDisplayHint: boolean = false;
 
-  //  サービスを使えるようにする
-  constructor(private quizservice:QuizService) {}
+  // サービスを使えるようにする
+  constructor(
+    private quizService: QuizService
+  ) {}
 
+  //
   ngOnInit(): void {
-    this.quizCount = this.quizservice.quizCount;
-    this.quiz = this.quizservice.getQuiz();
+    this.quizCount = this.quizService.quizCount;
+    this.quiz = this.quizService.getQuiz();
   }
-    // 問題のヒントが表示する。
-  clickHint():void{
+
+  // 問題のヒントが表示する。
+  clickHint(): void {
     this.isDisplayHint = !this.isDisplayHint;
   }
-  //
-  choiceAnswer(choice: Choice){
-    this.quiz = this.quizservice.nextQuiz();
-    this.quizCount = this.quizservice.nextQuizCount();
-  }
 
+  // quizServiceから関数を呼び出す
+  selectAnswer(choice: Choice) {
+    this.quiz = this.quizService.nextQuiz();
+    this.quizCount = this.quizService.nextQuizCount();
+    this.quizService.resultMove();
+  }
 }
