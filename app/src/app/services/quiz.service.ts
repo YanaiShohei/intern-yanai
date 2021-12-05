@@ -14,24 +14,36 @@ export class QuizService {
 
   constructor(private router:Router) { }
 
-  initQuiz(){}
-
   // クイズを開始
   startQuiz(){
     this.quizList = QUIZ_DATA;
-    this.quizCount = 1;
+    this.quizCount = 0;
     this.router.navigate(['question'])
   }
+
   // クイズを一つ返す
-  getQuiz(){
-    return this.quizList[this.quizCount -1];
+  getQuiz() {
+    return this.quizList[this.quizCount];
   }
+
   // 次のクイズに移る
-  nextQuiz(){
-    return this.quizList[++this.quizCount];
+  nextQuiz() {
+    ++this.quizCount;
+    return this.quizList[this.quizCount];
   }
-  nextQuizCount(){
+
+  // 問題のカウントを進める
+  nextQuizCount() {
     return this.quizCount;
+  }
+
+  // 問題画面から結果画面に遷移
+  resultMove() {
+    if(this.quizCount < this.quizList.length){
+      this.router.navigate(['question']);
+    }else{
+      this.router.navigate(['result']);
+    }
   }
 }
 
