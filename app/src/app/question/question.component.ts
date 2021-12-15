@@ -32,7 +32,6 @@ export class QuestionComponent implements OnInit {
     this.quizCount = this.quizService.quizCount;
     this.quiz = this.quizService.getQuiz();
     this.quiz.choices = _.shuffle(this.quiz.choices);
-    console.log(this.quiz.choices);
   }
 
   // 問題のヒントが表示する。
@@ -43,6 +42,7 @@ export class QuestionComponent implements OnInit {
   // quizServiceから関数を呼び出す
   selectAnswer(choice: Choice,) {
     this.quizService.answerCheck(choice);
+    this.quizCount = this.quizService.nextQuizCount();
     // 問題画面から結果画面に遷移
     if(this.quizCount < this.quizService.quizList.length){
       this.router.navigate(['question']);
