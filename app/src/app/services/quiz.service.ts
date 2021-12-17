@@ -11,6 +11,8 @@ export class QuizService {
   quizList:any;
   // クイズをカウントする変数
   quizCount:number = 0;
+  // 正解した問題をカウントする
+  trueAnswerCount: number = 0;
 
   constructor(private router:Router) { }
 
@@ -18,16 +20,16 @@ export class QuizService {
   startQuiz(){
     this.quizList = QUIZ_DATA;
     this.quizCount = 0;
-    this.router.navigate(['question'])
+    this.trueAnswerCount = 0;
   }
 
   // クイズを一つ返す
-  getQuiz() {
+  getQuiz(): Quiz {
     return this.quizList[this.quizCount];
   }
 
   // 次のクイズに移る
-  nextQuiz() {
+  nextQuiz(): Quiz {
     ++this.quizCount;
     return this.quizList[this.quizCount];
   }
@@ -37,12 +39,11 @@ export class QuizService {
     return this.quizCount;
   }
 
-  // 問題画面から結果画面に遷移
-  resultMove() {
-    if(this.quizCount < this.quizList.length){
-      this.router.navigate(['question']);
-    }else{
-      this.router.navigate(['result']);
+  // 選んだ選択肢がtrueならtrueAnswerCountを+1する
+  answerCheck(choice: Choice){
+    ++this.quizCount;
+    if(choice.isAnswer){
+      ++this.trueAnswerCount;
     }
   }
 }
