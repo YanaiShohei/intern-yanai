@@ -1,6 +1,8 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
 import { Router } from '@angular/router';
+import { QuizService } from '../services/quiz.service';
+
 
 @Component({
   selector: 'app-result',
@@ -8,11 +10,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./result.component.scss']
 })
 
-export class ResultComponent implements OnInit {
+export class ResultComponent implements OnInit, AfterViewInit {
 
-  backTitle(){
-    this.router.navigate(['../title'])
-  }
+  quizList?: any = this.quizService.quizList;
+
+  trueAnswerCount: number = this.quizService.trueAnswerCount;
 
   @ViewChild('canvas')
   ref?: ElementRef;
@@ -23,14 +25,16 @@ export class ResultComponent implements OnInit {
   context?: CanvasRenderingContext2D;
   chart?: Chart;
 
-  constructor(private _elementRef:ElementRef,private router: Router,){
+  constructor(
+    private _elementRef: ElementRef,
+    private router: Router,
+    private quizService: QuizService,
+  ){
     Chart.register(...registerables);
   }
 
   ngAfterViewInit(){
-
     this.context = this.ref?.nativeElement.getContext('2d');
-
     // this.chart = new Chart(this.context!,{
     //   type: 'doughnut',
     //   data: this.data,
@@ -55,4 +59,9 @@ export class ResultComponent implements OnInit {
       },
     })
   }
+
+  backTitle(){
+    this.router.navigate(['title'])
+  }
+
 }

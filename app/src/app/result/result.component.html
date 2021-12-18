@@ -1,7 +1,7 @@
 <h1>点数</h1>
-<h2> 5/15点</h2>
+<h2>{{this.trueAnswerCount}}/{{this.quizList.length}}</h2>
 <div width="400" height="400">
     <canvas id="canvas">{{chart}}</canvas>
 </div>
-<button (click)="backTitle()">タイトルへ戻る</button>
-<button>シェア</button>
+<button mat-raised-button color="accent" (click)="backTitle()">タイトルへ戻る</button>
+<button mat-raised-button color="accent">シェア</button>
