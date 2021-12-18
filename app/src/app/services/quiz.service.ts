@@ -40,7 +40,7 @@ export class QuizService {
   }
 
   // 選んだ選択肢がtrueならtrueAnswerCountを+1する
-  answerCheck(choice: Choice){
+  checkAnswer(choice: Choice){
     ++this.quizCount;
     if(choice.isAnswer){
       ++this.trueAnswerCount;
