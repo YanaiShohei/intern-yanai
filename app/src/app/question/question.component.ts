@@ -43,6 +43,7 @@ export class QuestionComponent implements OnInit {
   // quizServiceから関数を呼び出す
   selectAnswer(choice: Choice,) {
     this.quizService.answerCheck(choice);
+    this.quizCount = this.quizService.nextQuizCount();
     // 問題画面から結果画面に遷移
     if(this.quizCount < this.quizService.quizList.length){
       this.router.navigate(['question']);

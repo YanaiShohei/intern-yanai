@@ -1,9 +1,9 @@
-<h1>{{quizCount}}問目</h1>
+<h1>{{quizCount + 1}}問目</h1>
 
 <h3>{{quiz?.question}}</h3>
 
 <div *ngFor="let choice of quiz?.choices">
-<button mat-raised-button color="accent" class="button" (click)="choiceAnswer(choice)" >
+<button mat-raised-button color="accent" class="button" (click)="selectAnswer(choice)" >
 {{choice.statement}}
 </button>
 </div>
