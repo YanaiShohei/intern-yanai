@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UrlHandlingStrategy } from '@angular/router';
-import { Quiz, Choice, QUIZ_DATA} from 'src/app/const/quiz';
+import { Quiz, Choice, QUIZ_DATA, } from 'src/app/const/quiz';
 import { QuizService } from '../services/quiz.service';
 import { Router } from '@angular/router';
 import * as _ from 'lodash-es';
@@ -41,8 +41,8 @@ export class QuestionComponent implements OnInit {
   }
 
   // quizServiceから関数を呼び出す
-  selectAnswer(choice: Choice,) {
-    this.quizService.answerCheck(choice);
+  selectAnswer( choice: Choice ){
+    this.quizService.answerCheck( choice );
     this.quizCount = this.quizService.nextQuizCount();
     // 問題画面から結果画面に遷移
     if(this.quizCount < this.quizService.quizList.length){

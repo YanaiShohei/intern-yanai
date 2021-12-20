@@ -43,7 +43,7 @@ export class ResultComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.chart = new Chart('canvas', {
-      type: 'line',
+      type: 'radar',
       data: {
         labels: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
         datasets: [
