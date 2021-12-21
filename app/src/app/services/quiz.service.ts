@@ -48,7 +48,9 @@ export class QuizService {
   }
 
   // 正解した問題をカウントする
-  answerCheck( choice: Choice ){
+  // 選んだ選択肢がtrueならtrueAnswerCountを+1する
+  checkAnswer(choice: Choice){
+    ++this.quizCount;
     if(choice.isAnswer){
       ++this.trueAnswerCount;
       // カテゴリー別の正解数をカウント
