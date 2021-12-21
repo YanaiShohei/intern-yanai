@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ChildrenOutletContexts, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { Choice,QUIZ_DATA,Quiz } from '../const/quiz';
 
 @Injectable({
@@ -28,7 +28,14 @@ export class QuizService {
   startQuiz(){
     this.quizList = QUIZ_DATA;
     this.quizCount = 0;
+    // 正解数を初期化
     this.trueAnswerCount = 0;
+    // ジャンル別の正解数を初期化
+    this.correctAnswerCountCategory.Category1 = 0;
+    this.correctAnswerCountCategory.Category2 = 0;
+    this.correctAnswerCountCategory.Category3 = 0;
+    this.correctAnswerCountCategory.Category4 = 0;
+    this.correctAnswerCountCategory.Category5 = 0;
   }
 
   // クイズを一つ返す
@@ -56,27 +63,22 @@ export class QuizService {
       // カテゴリーが１の場合
       if(this.quizList[this.quizCount].category == 'カテゴリー1'){
         ++this.correctAnswerCountCategory.Category1
-        console.log(this.correctAnswerCountCategory.Category1)
       }
       // カテゴリーが２の場合
       if(this.quizList[this.quizCount].category == 'カテゴリー2'){
         ++this.correctAnswerCountCategory.Category2
-        console.log(this.correctAnswerCountCategory.Category2)
       }
       // カテゴリー３の場合
       if(this.quizList[this.quizCount].category == 'カテゴリー3'){
         ++this.correctAnswerCountCategory.Category3
-        console.log(this.correctAnswerCountCategory.Category3)
       }
       // カテゴリー４の場合
       if(this.quizList[this.quizCount].category == 'カテゴリー4'){
         ++this.correctAnswerCountCategory.Category4
-        console.log(this.correctAnswerCountCategory.Category4)
       }
       // カテゴリー５の場合
       if(this.quizList[this.quizCount].category == 'カテゴリー5'){
         ++this.correctAnswerCountCategory.Category5
-        console.log(this.correctAnswerCountCategory.Category5)
       }
     }
   }

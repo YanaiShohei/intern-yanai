@@ -14,7 +14,7 @@ export interface Quiz {
   choices: Choice[]
   //explanationというstring型の変数 ヒントを格納?
   hint: string;
-  // 問題のジャンル
+  // 問題のカテゴリー
   category: string;
 };
 
