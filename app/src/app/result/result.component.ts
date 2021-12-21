@@ -36,7 +36,9 @@ export class ResultComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(){
     this.context = this.ref?.nativeElement.getContext('2d');
     // this.chart = new Chart(this.context!,{
+    // グラフのタイプ
     //   type: 'doughnut',
+    // グラフの中に入るデータ
     //   data: this.data,
     // })
   }
