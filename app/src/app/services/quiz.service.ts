@@ -38,19 +38,18 @@ export class QuizService {
 
   // 次のクイズに移る
   nextQuiz(): Quiz {
-    ++this.quizCount;
     return this.quizList[this.quizCount];
   }
 
   // 問題のカウントを進める
   nextQuizCount() {
+    ++this.quizCount;
     return this.quizCount;
   }
 
   // 正解した問題をカウントする
   // 選んだ選択肢がtrueならtrueAnswerCountを+1する
   checkAnswer(choice: Choice){
-    ++this.quizCount;
     if(choice.isAnswer){
       ++this.trueAnswerCount;
       // カテゴリー別の正解数をカウント
@@ -80,7 +79,6 @@ export class QuizService {
         console.log(this.correctAnswerCountCategory.Category5)
       }
     }
-    ++this.quizCount;
   }
 }
 
