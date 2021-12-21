@@ -77,8 +77,8 @@ export class QuizService {
         ++this.correctAnswerCountCategory.Category5
         console.log(this.correctAnswerCountCategory.Category5)
       }
-      ++this.quizCount;
     }
+    ++this.quizCount;
   }
 }
 
