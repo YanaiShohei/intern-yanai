@@ -14,12 +14,12 @@ export class QuizService {
   // 正解した問題をカウントする
   trueAnswerCount: number = 0;
   // ジャンル別に正解数をカウントする
-  correctAnswerCountCategory = {
-    Category1: 0,
-    Category2: 0,
-    Category3: 0,
-    Category4: 0,
-    Category5: 0,
+  correctCategoryCount = {
+    gen1980: 0,
+    gen1990: 0,
+    gen2000: 0,
+    gen2010: 0,
+    gen2020: 0,
   }
 
   constructor(private router:Router) { }
@@ -31,11 +31,11 @@ export class QuizService {
     // 正解数を初期化
     this.trueAnswerCount = 0;
     // ジャンル別の正解数を初期化
-    this.correctAnswerCountCategory.Category1 = 0;
-    this.correctAnswerCountCategory.Category2 = 0;
-    this.correctAnswerCountCategory.Category3 = 0;
-    this.correctAnswerCountCategory.Category4 = 0;
-    this.correctAnswerCountCategory.Category5 = 0;
+    this.correctCategoryCount.gen1980 = 0;
+    this.correctCategoryCount.gen1990 = 0;
+    this.correctCategoryCount.gen2000 = 0;
+    this.correctCategoryCount.gen2010 = 0;
+    this.correctCategoryCount.gen2020 = 0;
   }
 
   // クイズを一つ返す
@@ -61,24 +61,24 @@ export class QuizService {
       ++this.trueAnswerCount;
       // カテゴリー別の正解数をカウント
       // カテゴリーが１の場合
-      if(this.quizList[this.quizCount].category == 'カテゴリー1'){
-        ++this.correctAnswerCountCategory.Category1
+      if(this.quizList[this.quizCount].category == 'gen1980'){
+        ++this.correctCategoryCount.gen1980
       }
       // カテゴリーが２の場合
-      if(this.quizList[this.quizCount].category == 'カテゴリー2'){
-        ++this.correctAnswerCountCategory.Category2
+      if(this.quizList[this.quizCount].category == 'gen1990'){
+        ++this.correctCategoryCount.gen1990
       }
       // カテゴリー３の場合
-      if(this.quizList[this.quizCount].category == 'カテゴリー3'){
-        ++this.correctAnswerCountCategory.Category3
+      if(this.quizList[this.quizCount].category == 'gen2000'){
+        ++this.correctCategoryCount.gen2000
       }
       // カテゴリー４の場合
-      if(this.quizList[this.quizCount].category == 'カテゴリー4'){
-        ++this.correctAnswerCountCategory.Category4
+      if(this.quizList[this.quizCount].category == 'gen2010'){
+        ++this.correctCategoryCount.gen2010
       }
       // カテゴリー５の場合
-      if(this.quizList[this.quizCount].category == 'カテゴリー5'){
-        ++this.correctAnswerCountCategory.Category5
+      if(this.quizList[this.quizCount].category == 'gen2020'){
+        ++this.correctCategoryCount.gen2020
       }
     }
   }

@@ -40,7 +40,7 @@ export const QUIZ_DATA: Quiz[] = [
       },
     ],
     hint: 'ゆずの楽曲。アテネオリンピック公式テーマソング',
-    category: 'カテゴリー1'
+    category: 'gen1980'
   },
   {
     question: '２人よりそって歩いて永久の愛を形にしていつまでも君の横で笑っていたくて',
@@ -63,7 +63,7 @@ export const QUIZ_DATA: Quiz[] = [
       },
     ],
     hint: 'GReeeeNの楽曲。高校野球を題材にしたTBS系ドラマ「ROOKIES」の主題歌',
-    category: 'カテゴリー2',
+    category: 'gen1990',
   },
   {
     question: '見えないものを見ようとして、望遠鏡を覗き込んだ静寂を切り裂いていくつもの声が生まれたよ',
@@ -86,7 +86,7 @@ export const QUIZ_DATA: Quiz[] = [
       },
     ],
     hint: 'BUMP OF CHICKENの楽曲。関西テレビ・フジテレビ系ドラマ「天体観測」挿入歌。',
-    category: 'カテゴリー3'
+    category: 'gen2000'
   },
   {
     question: '広い宇宙の数あるひとつ青い地球の広い世界で小さな恋の思いは届く',
@@ -109,7 +109,7 @@ export const QUIZ_DATA: Quiz[] = [
       },
     ],
     hint: 'MONGOL800の代表曲。これまでにシングル化されたことはないが、さまざまなアーティストにカバーされている。',
-    category: 'カテゴリー4'
+    category: 'gen2010'
   },
   {
     question: '描いた夢とここにある今２つの景色見比べても',
@@ -132,6 +132,6 @@ export const QUIZ_DATA: Quiz[] = [
       },
     ],
     hint: 'ロードオブメジャーの楽曲。NHK教育アニメ「メジャー〜１stシーズン〜」のオープニングテーマ',
-    category: 'カテゴリー5'
+    category: 'gen2020'
   }
 ];
