@@ -5,16 +5,17 @@ import { Choice,QUIZ_DATA,Quiz } from '../const/quiz';
 @Injectable({
   providedIn: 'root'
 })
+
 export class QuizService {
 
   // クイズが入る配列
-  quizList: any;
+  quizList: Quiz[] = [];
   // クイズをカウントする変数
   quizCount:number = 0;
   // 正解した問題をカウントする
   trueAnswerCount: number = 0;
   // ジャンル別に正解数をカウントする
-  correctCategoryCount = {
+  correctCategoryCount: { [key: string]: number } = {
     gen1980: 0,
     gen1990: 0,
     gen2000: 0,
@@ -60,25 +61,13 @@ export class QuizService {
     if(choice.isAnswer){
       ++this.trueAnswerCount;
       // カテゴリー別の正解数をカウント
-      // カテゴリーが１の場合
-      if(this.quizList[this.quizCount].category == 'gen1980'){
-        ++this.correctCategoryCount.gen1980
-      }
-      // カテゴリーが２の場合
-      if(this.quizList[this.quizCount].category == 'gen1990'){
-        ++this.correctCategoryCount.gen1990
-      }
-      // カテゴリー３の場合
-      if(this.quizList[this.quizCount].category == 'gen2000'){
-        ++this.correctCategoryCount.gen2000
-      }
-      // カテゴリー４の場合
-      if(this.quizList[this.quizCount].category == 'gen2010'){
-        ++this.correctCategoryCount.gen2010
-      }
-      // カテゴリー５の場合
-      if(this.quizList[this.quizCount].category == 'gen2020'){
-        ++this.correctCategoryCount.gen2020
+      // this.quizList[this.quizCount].category ->カテゴリがストリングで入ってる
+      // ++this.correctCategoryCount['カテゴリ'] ->かっこの中にカテゴリをストリングで突っ込むと任意のカテゴリのカウントにアクセスできる。
+      // if(this.correctCategoryCount.hasOwnProperty(this.quizList[this.quizCount].category)){
+      //   this.correctCategoryCount[this.quizList[this.quizCount].category]
+      // }
+      if(this.quizList[this.quizCount].category){
+        ++this.correctCategoryCount[this.quizList[this.quizCount].category]
       }
     }
   }
