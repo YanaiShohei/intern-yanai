@@ -45,20 +45,28 @@ export class ResultComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.chart = new Chart('canvas', {
-      type: 'line',
+      type: 'radar',
       data: {
-        labels: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+        labels: ['1980年代曲', '1990年代曲', '2000年代曲', '2010年代曲', '2020年代曲'],
         datasets: [
           {
             data: [20, 35, 40, 30, 45, 35, 40],
             borderColor: '#3e95cd',
             fill: false,
-            label: 'Coin Price',
+            label: '得点',
             backgroundColor: 'rgba(93, 175, 89, 0.1)',
             borderWidth: 3,
-          },
+          }
         ],
       },
+      options: {
+        scales:{
+          r:{
+            min: 0,
+            max: 5,
+          },
+        }
+      }
     })
   }
 
