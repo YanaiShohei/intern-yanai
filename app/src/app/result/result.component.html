@@ -1,6 +1,6 @@
 <h1>点数</h1>
 <h2>{{this.trueAnswerCount}}/{{this.quizList.length}}</h2>
-<div style="height:350px; width:350px" class="center">
+<div style="height:350px; width:350px;" class="center">
     <canvas id="canvas">{{chart}}</canvas>
 </div>
 <div class="center2">
@@ -8,7 +8,7 @@
 </div>
 <br>
 <div class="center2">
-  <button class="button2">
-    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <button class="button2"><img src="/assets/twitter.png" style="height:25px; width:30px;">
+    <a href="http://twitter.com/share?url=https://app-music-959ac.web.app/&text=音楽診断の得点は{{this.trueAnswerCount}}/{{this.quizList.length}}点でした!!" target="_blank">ツイート</a>
   </button>
 </div>
