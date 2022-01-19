@@ -1,5 +1,37 @@
 .button{
     width: 250px;
-    padding: 8px;
-    margin-bottom: 15px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 40px;
+    background-color: #F3D2C1;
+    color: #001858;
+    font-size: 15px;
   }
+
+.button2{
+  width: 150px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 40px;
+  color: #001858;
+  background-color: #8BD3DD;
+  font-size: 30px;
+}
+
+.center{
+  text-align: center;
+}
+
+h1{
+    font-size: 35px;
+    text-align: center;
+  }
+
+h2{
+    text-align: center;
+  }
+
+.hint{
+  color: #FF0000;
+  text-align: center;
+}

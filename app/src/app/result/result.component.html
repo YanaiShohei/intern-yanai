@@ -1,7 +1,14 @@
 <h1>点数</h1>
 <h2>{{this.trueAnswerCount}}/{{this.quizList.length}}</h2>
-<div style="height:400px; width:400px">
+<div style="height:350px; width:350px" class="center">
     <canvas id="canvas">{{chart}}</canvas>
 </div>
-<button mat-raised-button color="accent" (click)="backTitle()">タイトルへ戻る</button>
-<button mat-raised-button color="accent">シェア</button>
+<div class="center2">
+  <button mat-raised-button (click)="backTitle()" class="button1">タイトルへ戻る</button>
+</div>
+<br>
+<div class="center2">
+  <button class="button2">
+    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </button>
+</div>
