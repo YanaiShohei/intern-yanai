@@ -14,6 +14,8 @@ export interface Quiz {
   choices: Choice[]
   //explanationというstring型の変数 ヒントを格納?
   hint: string;
+  // 問題のカテゴリー
+  category: string;
 };
 
 export const QUIZ_DATA: Quiz[] = [
@@ -278,12 +280,8 @@ export const QUIZ_DATA: Quiz[] = [
         isAnswer: false
       },
     ],
-<<<<<<< Updated upstream
-    hint: 'ゆずの楽曲。アテネオリンピック公式テーマソング'
-=======
     hint: 'ゆずの楽曲。アテネオリンピック公式テーマソング',
     category: 'gen2000'
->>>>>>> Stashed changes
   },
   // 12
   {
@@ -306,12 +304,8 @@ export const QUIZ_DATA: Quiz[] = [
         isAnswer: false
       },
     ],
-<<<<<<< Updated upstream
-    hint: 'GReeeeNの楽曲。高校野球を題材にしたTBS系ドラマ「ROOKIES」の主題歌'
-=======
     hint: 'GReeeeNの楽曲。高校野球を題材にしたTBS系ドラマ「ROOKIES」の主題歌',
     category: 'gen2000',
->>>>>>> Stashed changes
   },
   // 13
   {
@@ -334,7 +328,8 @@ export const QUIZ_DATA: Quiz[] = [
         isAnswer: false
       },
     ],
-    hint: 'BUMP OF CHICKENの楽曲。関西テレビ・フジテレビ系ドラマ「天体観測」挿入歌。'
+    hint: 'BUMP OF CHICKENの楽曲。関西テレビ・フジテレビ系ドラマ「天体観測」挿入歌。',
+    category: 'gen2000'
   },
   // 14
   {
@@ -357,12 +352,8 @@ export const QUIZ_DATA: Quiz[] = [
         isAnswer: false
       },
     ],
-<<<<<<< Updated upstream
-    hint: 'MONGOL800の代表曲。これまでにシングル化されたことはないが、さまざまなアーティストにカバーされている。'
-=======
     hint: 'MONGOL800の代表曲。これまでにシングル化されたことはないが、さまざまなアーティストにカバーされている。',
     category: 'gen2000'
->>>>>>> Stashed changes
   },
   // 15
   {
@@ -385,9 +376,6 @@ export const QUIZ_DATA: Quiz[] = [
         isAnswer: false
       },
     ],
-<<<<<<< Updated upstream
-    hint: 'ロードオブメジャーの楽曲。NHK教育アニメ「メジャー〜１stシーズン〜」のオープニングテーマ'
-=======
     hint: 'ロードオブメジャーの楽曲。NHK教育アニメ「メジャー〜１stシーズン〜」のオープニングテーマ',
     category: 'gen2000'
   },
@@ -630,6 +618,5 @@ export const QUIZ_DATA: Quiz[] = [
     ],
     hint: 'アニメ映画『クレヨンしんちゃん 新婚旅行ハリケーン 〜失われたひろし〜』の主題歌として書き下ろされた。「あいみょん」の楽曲。',
     category: 'gen2020'
->>>>>>> Stashed changes
   }
 ];
