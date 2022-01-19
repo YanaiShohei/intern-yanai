@@ -44,13 +44,16 @@ export class ResultComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
+
+    const convertedCorrectCategoryCount = this.convertObjectToArray();
+    const correctCategoryCountData = this.getCorrectCount(convertedCorrectCategoryCount);
     this.chart = new Chart('canvas', {
       type: 'radar',
       data: {
         labels: ['1980年代曲', '1990年代曲', '2000年代曲', '2010年代曲', '2020年代曲'],
         datasets: [
           {
-            data: [20, 35, 40, 30, 45, 35, 40],
+            data: correctCategoryCountData,
             borderColor: '#3e95cd',
             fill: false,
             label: '得点',
@@ -74,4 +77,19 @@ export class ResultComponent implements OnInit, AfterViewInit {
     this.router.navigate(['title'])
   }
 
+  // objectをarrに変換する
+  convertObjectToArray() {
+    const arr = Object.entries(this.quizService.correctCategoryCount)
+    console.log(arr);
+    return arr;
+  }
+
+  // categoryからカテゴリー別の正解数だけを取り出す
+  getCorrectCount(data: any): any[]{
+    const correctCounts: any[] = [];
+    data.forEach((category: any) => {
+      correctCounts.push(category[1])
+    });
+    return correctCounts;
+  }
 }
