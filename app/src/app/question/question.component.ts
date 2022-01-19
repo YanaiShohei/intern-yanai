@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UrlHandlingStrategy } from '@angular/router';
-import { Quiz, Choice, QUIZ_DATA} from 'src/app/const/quiz';
+import { Quiz, Choice, QUIZ_DATA } from 'src/app/const/quiz';
 import { QuizService } from '../services/quiz.service';
 import { Router } from '@angular/router';
 import * as _ from 'lodash-es';
@@ -32,7 +31,6 @@ export class QuestionComponent implements OnInit {
     this.quizCount = this.quizService.quizCount;
     this.quiz = this.quizService.getQuiz();
     this.quiz.choices = _.shuffle(this.quiz.choices);
-    console.log(this.quiz.choices);
   }
 
   // 問題のヒントが表示する。
