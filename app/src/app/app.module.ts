@@ -5,6 +5,9 @@ import { AppComponent } from './app.component';
 import { TitleComponent } from './title/title.component';
 import { QuestionComponent } from './question/question.component';
 import { ResultComponent } from './result/result.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+
 
 
 @NgModule({
@@ -12,11 +15,13 @@ import { ResultComponent } from './result/result.component';
     AppComponent,
     TitleComponent,
     QuestionComponent,
-    ResultComponent
+    ResultComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

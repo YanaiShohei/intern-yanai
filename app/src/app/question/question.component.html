@@ -1,17 +1,19 @@
-<h1>{{quizCount}}問目</h1>
+<h1>{{quizCount +1}}問目</h1>
 
-<h3>{{quiz?.question}}</h3>
+<h2>{{quiz?.question}}</h2>
 
-<div *ngFor="let choice of quiz?.choices">
-<button mat-raised-button color="accent" class="button" (click)="choiceAnswer(choice)" >
+<div *ngFor="let choice of quiz?.choices" class="center">
+<button mat-raised-button class="button" (click)="selectAnswer(choice)" >
 {{choice.statement}}
 </button>
 </div>
 <br>
-<button mat-raised-button color="accent" (click)="clickHint()" >ヒント</button>
-
+<div class="center">
+  <button mat-raised-button (click)="clickHint()" class="button2">ヒント</button>
+</div>
+<br>
 <div *ngIf="isDisplayHint">
-  <li>
+  <h3 class="hint">
     {{quiz?.hint}}
-  </li>
+  </h3>
 </div>
